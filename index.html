@@ -135,7 +135,9 @@
               <p><span> phone : </span> <span data-field="phone"></span></p>
             </div>
             <div class="box">
-              <p><span> location : </span> <span data-field="location">??</span></p>
+              <p>
+                <span> location : </span> <span data-field="location">??</span>
+              </p>
               <p><span> GPA : </span> <span data-field="gpa"></span></p>
             </div>
           </div>
@@ -197,7 +199,9 @@
             <h3>Bachelor of Information Technology (Software Engineering)</h3>
             <p>Ho Chi Minh City University of Education</p>
             <h4>September 2022 - Present | Expected graduation: July 2026</h4>
-            <h4>GPA (up to the 7th semester): <span data-field="gpa"></span></h4>
+            <h4>
+              GPA (up to the 7th semester): <span data-field="gpa"></span>
+            </h4>
           </div>
         </div>
       </div>
@@ -210,23 +214,7 @@
         <i class="fas fa-laptop-code"></i> Projects <span>Made</span>
       </h2>
 
-      <div class="box-container">
-        <!-- <div class="box tilt">
-      <img draggable="false" src="./assets/images/projects/portfolio1.PNG" alt="" />
-      <div class="content">
-        <div class="tag">
-        <h3>Portfolio Website</h3>
-        </div>
-        <div class="desc">
-          <p>Personal portfolio website. Don't need much info about it, just scroll down. You're here only!</p>
-          <div class="btns">
-            <a href="#" class="btn" target="_blank"><i class="fas fa-eye"></i> View</a>
-            <a href="https://github.com/jigar-sable/Portfolio-Website" class="btn" target="_blank">Code <i class="fas fa-code"></i></a>
-          </div>
-        </div>
-      </div>
-    </div> -->
-      </div>
+      <div class="box-container"></div>
 
       <div class="viewall">
         <a href="/projects/index.html" class="btn"
@@ -281,46 +269,23 @@
 </section> -->
     <!-- experience section ends -->
 
+    <section class="education" id="publications">
+      <h2 class="heading">
+        <i class="fa fa-certificate"></i> My <span>Publications</span>
+      </h2>
+
+      <div class="box-container" id="publicationsContainer">
+        <!-- Publications loaded from JSON -->
+      </div>
+    </section>
+
     <section class="education" id="certifications">
       <h2 class="heading">
         <i class="fa fa-certificate"></i> My <span>Certificates</span>
       </h2>
 
-      <div class="box-container">
-        <div class="box">
-          <div class="content">
-            <h3>IELTS Academic</h3>
-            <p>July 2025</p>
-          </div>
-        </div>
-
-        <div class="box">
-          <div class="content">
-            <h3>Microsoft Digital Literacy</h3>
-            <p>April 2025</p>
-          </div>
-        </div>
-
-        <div class="box">
-          <div class="content">
-            <h3>Google Cloud & Google Workspace Certifications</h3>
-            <p>April 2025</p>
-          </div>
-        </div>
-
-        <div class="box">
-          <div class="content">
-            <h3>Microsoft Office Specialist (Word, PowerPoint, Excel)</h3>
-            <p>August 2024</p>
-          </div>
-        </div>
-
-        <div class="box">
-          <div class="content">
-            <h3>Mendix Rapid Developer Certification</h3>
-            <p>November 2025</p>
-          </div>
-        </div>
+      <div class="box-container" id="certificationsContainer">
+        <!-- Certifications loaded from JSON -->
       </div>
     </section>
 
@@ -329,27 +294,8 @@
       <h2 class="heading">
         <i class="fa fa-trophy"></i> My <span>Achievements</span>
       </h2>
-      <div class="content">
-        <div class="box-container">
-          <div class="box">
-            <div class="content">
-              <h3>
-                🏆 Finalist Round, 30th Ho Chi Minh City Youth Informatics
-                Contest, Category C
-              </h3>
-              <p>October 2021</p>
-            </div>
-          </div>
-          <div class="box">
-            <div class="content">
-              <h3>
-                🥉 Bronze Medal, 26th Ho Chi Minh City Extended Olympiad for
-                High School Students
-              </h3>
-              <p>April 2021</p>
-            </div>
-          </div>
-        </div>
+      <div class="box-container" id="achievementsContainer">
+        <!-- Achievements loaded from JSON -->
       </div>
     </section>
     <!-- Achievements section ends -->
@@ -384,7 +330,8 @@
           <p><i class="fas fa-phone"></i><span data-field="phone"></span></p>
           <p><i class="fas fa-envelope"></i><span data-field="email"></span></p>
           <p>
-            <i class="fas fa-map-marked-alt"></i><span data-field="location"></span>
+            <i class="fas fa-map-marked-alt"></i
+            ><span data-field="location"></span>
           </p>
           <div class="share">
             <a

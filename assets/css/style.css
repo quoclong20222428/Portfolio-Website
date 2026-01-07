@@ -1311,3 +1311,10 @@ form .button-area {
   top: calc(100% - 12rem);
 }
 /* scroll top ends */
+
+/* Additional sections styling */
+#publications,
+#certifications,
+#achievements {
+  min-height: auto !important;
+}
