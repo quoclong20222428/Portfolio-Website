@@ -186,13 +186,28 @@ document.onkeydown = function (e) {
 }
 
 /* ===== SCROLL REVEAL ANIMATION ===== */
-const srtop = ScrollReveal({
-    origin: 'top',
-    distance: '80px',
-    duration: 1000,
-    reset: false,
-    viewFactor: 0.2,  // Element reveals when 20% is visible
-    viewOffset: { top: 50, bottom: 50 }  // Offset from viewport edges
+// Function to get appropriate scroll reveal config based on screen size
+function getScrollRevealConfig() {
+    const isMobile = window.innerWidth < 768; // Mobile: < 768px, Desktop: >= 768px
+    
+    return {
+        origin: 'top',
+        distance: '80px',
+        duration: 1000,
+        reset: false,
+        viewFactor: isMobile ? 0.3 : 0.2,  // Mobile: 30%, Desktop: 20%
+        viewOffset: { top: 50, bottom: 50 }
+    };
+}
+
+const srtop = ScrollReveal(getScrollRevealConfig());
+
+// Re-initialize scroll reveal on window resize
+window.addEventListener('resize', () => {
+    // Reinitialize with new config when screen size changes
+    ScrollReveal().clean();
+    const newConfig = getScrollRevealConfig();
+    Object.assign(srtop, ScrollReveal(newConfig));
 });
 
 /* SCROLL HOME */
