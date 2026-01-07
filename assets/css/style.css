@@ -365,12 +365,8 @@ header .navbar ul li a:hover {
   height: auto;
   border-radius: 5%;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.6);
-  mix-blend-mode: luminosity;
   transition: 0.3s;
   cursor: pointer;
-}
-.about .row .image img:hover {
-  mix-blend-mode: normal;
 }
 .about .row .content {
   flex: 1 1 45rem;
@@ -405,6 +401,12 @@ header .navbar ul li a:hover {
 }
 .about .row .content .box-container .box p span {
   color: #011aff;
+}
+.about .row .content .box-container .box span[data-field] {
+  color: #000;
+}
+.about .row .content .box-container .box span[data-field="email"] {
+  text-transform: lowercase;
 }
 .resumebtn {
   margin-top: 6rem;
@@ -462,71 +464,139 @@ header .navbar ul li a:hover {
 .skills {
   min-height: 90vh;
   background: linear-gradient(to bottom, #57059e, #4a00e0);
+  padding: 2rem 9%;
 }
 .skills h2 {
   color: #fff;
+  margin-bottom: 3rem;
 }
 .skills .heading span {
-  color: rgb(255, 230, 0);
+  color: #ffd700;
 }
 .skills .container {
-  background: rgba(0, 0, 22, 0.4);
+  background: transparent;
   color: #fff;
-  border-radius: 1rem;
-  padding: 2rem;
-  width: 90%;
+  width: 100%;
   margin: auto;
-  margin-top: 2rem;
 }
 .skills .container .row {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+.skills .container .row > h3 {
+  font-size: 1.8rem;
+  color: #ffd700;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  position: relative;
+  padding-left: 15px;
+}
+.skills .container .row > h3::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 4px;
+  height: 100%;
+  background: #ffd700;
+  border-radius: 2px;
+}
+.skills-grid {
   display: grid;
-  grid-template-columns: repeat(6, 1fr);
-  flex-wrap: wrap;
-  gap: 1.8rem;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 1.5rem;
 }
 .skills .container .bar {
-  margin-bottom: 15px;
-  padding: 10px;
+  padding: 1.5rem;
   border-radius: 1rem;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-  background: rgba(0, 0, 22, 0.9);
-  transition: 0.2s;
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: all 0.3s ease;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 160px;
 }
 .skills .container .bar:hover {
-  box-shadow: 0 8px 10px rgba(0, 2, 68, 0.8) !important;
-  background-color: rgba(0, 0, 0, 0.9) !important;
+  background: rgba(255, 215, 0, 0.15);
+  border-color: #ffd700;
+  transform: translateY(-8px);
+  box-shadow: 0 8px 25px rgba(255, 215, 0, 0.2);
 }
 .skills .container .bar .info {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 1rem;
-  margin-top: 1rem;
+  gap: 0.8rem;
 }
-.skills .container .bar .info i {
-  font-size: 4rem;
+.skills .container .bar .info img {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+  filter: drop-shadow(0 2px 4px rgba(255, 255, 255, 0.3));
 }
 .skills .container .bar .info span {
-  font-size: 2rem;
-  font-weight: 500;
+  font-size: 1rem;
+  font-weight: 600;
+  text-align: center;
+  line-height: 1.3;
   font-family: "Poppins";
-  margin-left: 0.5rem;
 }
 /* skills media queries starts*/
-@media screen and (max-width: 600px) {
-  .skills .container {
-    padding: 0;
-    margin: 0;
+@media screen and (max-width: 1024px) {
+  .skills-grid {
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 1.2rem;
   }
-  .skills .container .row {
-    grid-template-columns: repeat(2, 1fr);
-    margin: 1rem;
-    padding: 2rem 0.2rem 2rem 0.2rem;
+}
+@media screen and (max-width: 768px) {
+  .skills {
+    padding: 4rem 5%;
+  }
+  .skills .heading {
+    font-size: 2.5rem;
+  }
+  .skills-grid {
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
     gap: 1rem;
   }
-  .skills .container {
-    margin-top: 5px;
-    width: 100%;
+  .skills .container .bar {
+    padding: 1rem;
+    min-height: 140px;
+  }
+  .skills .container .row > h3 {
+    font-size: 1.5rem;
+  }
+}
+@media screen and (max-width: 600px) {
+  .skills {
+    padding: 3rem 4%;
+  }
+  .skills .heading {
+    font-size: 2rem;
+  }
+  .skills-grid {
+    grid-template-columns: repeat(auto-fit, minmax(85px, 1fr));
+    gap: 0.8rem;
+  }
+  .skills .container .bar {
+    padding: 0.8rem;
+    min-height: 120px;
+  }
+  .skills .container .bar .info img {
+    width: 40px;
+    height: 40px;
+  }
+  .skills .container .bar .info span {
+    font-size: 0.85rem;
+  }
+  .skills .container .row > h3 {
+    font-size: 1.2rem;
   }
 }
 /* skills media queries ends*/
@@ -573,7 +643,7 @@ header .navbar ul li a:hover {
   width: 100%;
 }
 .education .box-container .box img {
-  object-fit: cover;
+  object-fit: contain;
   position: relative;
   width: 100%;
   height: 100%;
@@ -652,23 +722,24 @@ header .navbar ul li a:hover {
   color: rgb(255, 230, 0);
 }
 .work .box-container {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
   gap: 1.5rem;
   margin: 2rem;
 }
 .work .box-container .box {
-  flex: 1 1 30rem;
   border-radius: 0.5rem;
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
   position: relative;
   overflow: hidden;
-  height: 30rem;
+  /* height: 40rem; */
+  /* aspect-ratio: 16 / 9; */
 }
 .work .box-container .box img {
   height: 100%;
   width: 100%;
-  object-fit: cover;
+  object-fit: contain;
+  background: #000;
 }
 .work .box-container .box .content {
   height: 100%;
@@ -694,7 +765,7 @@ header .navbar ul li a:hover {
   font-size: 2rem;
 }
 .work .box-container .box:hover .content {
-  top: 25%;
+  top: 5%;
 }
 .work .desc {
   margin: 2rem;
@@ -758,6 +829,20 @@ header .navbar ul li a:hover {
   transform: translateX(5px);
 }
 /* work section ends */
+
+/* work section responsive */
+@media screen and (max-width: 1024px) {
+  .work .box-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media screen and (max-width: 768px) {
+  .work .box-container {
+    grid-template-columns: 1fr;
+    margin: 1rem;
+  }
+}
+/* work section responsive ends */
 
 /* experience section starts */
 .experience .timeline {
@@ -1168,6 +1253,9 @@ form .button-area {
   margin: 0 0.3rem;
   font-size: 1.5rem;
   animation: pound 0.35s infinite alternate;
+}
+.footer .box-container .box span[data-field="email"] {
+  text-transform: lowercase;
 }
 @-webkit-keyframes pound {
   to {

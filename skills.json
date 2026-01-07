@@ -1,122 +1,149 @@
-[
-    {
-        "name": "ReactJS",
-        "icon": "https://img.icons8.com/external-tal-revivo-color-tal-revivo/48/000000/external-react-a-javascript-library-for-building-user-interfaces-logo-color-tal-revivo.png"
-    },
-    {
-        "name": "ExpressJS",
-        "icon": "https://img.icons8.com/fluency/48/000000/node-js.png"
-    },
-    {
-        "name": "NodeJS",
-        "icon": "https://img.icons8.com/color/48/000000/nodejs.png"
-    },
-    {
-        "name": "Redux",
-        "icon": "https://img.icons8.com/color/48/000000/redux.png"
-    },
-    {
-        "name": "Firebase",
-        "icon": "https://img.icons8.com/color/48/000000/firebase.png"
-    },
-    {
-        "name": "Android",
-        "icon": "https://img.icons8.com/fluency/48/000000/android-os.png"
-    },
-    {
-        "name": "MaterialUI",
-        "icon": "https://img.icons8.com/color/48/000000/material-ui.png"
-    },
-    {
-        "name": "ChakraUI",
-        "icon": "https://img.icons8.com/color/48/000000/chakra-ui.png"
-    },
-    {
-        "name": "TailwindCSS",
-        "icon": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Tailwind_CSS_Logo.svg/48px-Tailwind_CSS_Logo.png"
-    },
-    {
-        "name": "Bootstrap",
-        "icon": "https://img.icons8.com/color/48/000000/bootstrap.png"
-    },
-    {
-        "name": "Sass",
-        "icon": "https://img.icons8.com/color/48/000000/sass.png"
-    },
-    {
-        "name": "HTML5",
-        "icon": "https://img.icons8.com/color/48/000000/html-5--v1.png"
-    },
-    {
-        "name": "CSS3",
-        "icon": "https://img.icons8.com/color/48/000000/css3.png"
-    },
-    {
-        "name": "JavaScript",
-        "icon": "https://img.icons8.com/color/48/000000/javascript--v1.png"
-    },
-    {
-        "name": "Java",
-        "icon": "https://img.icons8.com/color/48/000000/java-coffee-cup-logo--v1.png"
-    },
-    {
-        "name": "Kotlin",
-        "icon": "https://img.icons8.com/color/48/000000/kotlin.png"
-    },
-    {
-        "name": "PHP",
-        "icon": "https://img.icons8.com/offices/48/000000/php-logo.png"
-    },
-    {
-        "name": "Python",
-        "icon": "https://img.icons8.com/color/48/000000/python--v1.png"
-    },
-    {
-        "name": "C++",
-        "icon": "https://img.icons8.com/color/48/000000/c-plus-plus-logo.png"
-    },
-    {
-        "name": "MongoDB",
-        "icon": "https://img.icons8.com/color/48/000000/mongodb.png"
-    },
-    {
-        "name": "MySQL",
-        "icon": "https://img.icons8.com/color/48/000000/mysql-logo.png"
-    },
-    {
-        "name": "PostgreSQL",
-        "icon": "https://img.icons8.com/color/48/000000/postgreesql.png"
-    },
-    {
-        "name": "AWS",
-        "icon": "https://img.icons8.com/color/48/000000/amazon-web-services.png"
-    },
-    {
-        "name": "Heroku",
-        "icon": "https://img.icons8.com/color/48/000000/heroku.png"
-    },
-    {
-        "name": "Netlify",
-        "icon": "https://img.icons8.com/external-tal-revivo-shadow-tal-revivo/48/000000/external-netlify-a-cloud-computing-company-that-offers-hosting-and-serverless-backend-services-for-static-websites-logo-shadow-tal-revivo.png"
-    },
-    {
-        "name": "DigitalOcean",
-        "icon": "https://img.icons8.com/ios-filled/48/0080FF/digitalocean.png"
-    },
-    {
-        "name": "jQuery",
-        "icon": "https://img.icons8.com/ios-filled/48/1169ae/jquery.png"
-    },
-    {
-        "name": "Git VCS",
-        "icon": "https://img.icons8.com/color/48/000000/git.png"
-    },
-    {
-        "name": "GitHub",
-        "icon": "https://img.icons8.com/glyph-neue/48/ffffff/github.png"
-    },
-    {
-        "name": "WordPress",
-        "icon": "https://img.icons8.com/color/48/000000/wordpress.png"
-    }    
-]
+{
+    "languages": [
+        {
+            "name": "JavaScript",
+            "icon": "https://img.icons8.com/color/48/000000/javascript--v1.png"
+        },
+        {
+            "name": "TypeScript",
+            "icon": "https://img.icons8.com/color/48/000000/typescript.png"
+        },
+        {
+            "name": "Python",
+            "icon": "https://img.icons8.com/color/48/000000/python--v1.png"
+        },
+        {
+            "name": "C++",
+            "icon": "https://img.icons8.com/color/48/000000/c-plus-plus-logo.png"
+        }
+    ],
+    "frontend": [
+        {
+            "name": "HTML5",
+            "icon": "https://img.icons8.com/color/48/000000/html-5--v1.png"
+        },
+        {
+            "name": "CSS3",
+            "icon": "https://img.icons8.com/color/48/000000/css3.png"
+        },
+        {
+            "name": "React",
+            "icon": "https://img.icons8.com/external-tal-revivo-color-tal-revivo/48/000000/external-react-a-javascript-library-for-building-user-interfaces-logo-color-tal-revivo.png"
+        },
+        {
+            "name": "Next.js",
+            "icon": "https://img.icons8.com/color/48/000000/nextjs.png"
+        },
+        {
+            "name": "Vite",
+            "icon": "https://vitejs.dev/logo.svg"
+        },
+        {
+            "name": "Tailwind CSS",
+            "icon": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Tailwind_CSS_Logo.svg/48px-Tailwind_CSS_Logo.png"
+        },
+        {
+            "name": "Bootstrap",
+            "icon": "https://img.icons8.com/color/48/000000/bootstrap.png"
+        },
+        {
+            "name": "Axios",
+            "icon": "https://axios-http.com/assets/logo.svg"
+        }
+    ],
+    "backend": [
+        {
+            "name": "Node.js",
+            "icon": "https://www.freepnglogos.com/uploads/javascript-png/javascript-nodejs-logo-27.png"
+        },
+        {
+            "name": "Express.js",
+            "icon": "https://cdn.worldvectorlogo.com/logos/expressjs.svg"
+        },
+        {
+            "name": "FastAPI",
+            "icon": "https://avatars.githubusercontent.com/u/156354296?s=280&v=4"
+        },
+        {
+            "name": "Restful API",
+            "icon": "https://img.icons8.com/?size=100&id=55497&format=png&color=000000"
+        },
+        {
+            "name": "JWT",
+            "icon": "https://blog.kakaocdn.net/dna/cqbtEQ/btrZISJO4rM/AAAAAAAAAAAAAAAAAAAAAIaJndWGmu8hq7i91HglLZdD6sZLIBnxnRjVBitVl80C/img.png?credential=yqXZFxpELC7KVnFOS48ylbz2pIh7yKj8&expires=1769871599&allow_ip=&allow_referer=&signature=uZ5BbDEtsCxcIGdpxu9WhCMTe0Y%3D"
+        },
+        {
+            "name": "Google OAuth 2.0",
+            "icon": "https://i0.wp.com/www.omnidefend.com/wp-content/uploads/2022/03/0Auth_Trans.png?fit=1014%2C676&ssl=1"
+        },
+        {
+            "name": "SMTP",
+            "icon": "https://mona.solutions/wp-content/uploads/2017/01/Gmail_la_gi-1000x727.png"
+        }
+    ],
+    "databases": [
+        {
+            "name": "PostgreSQL",
+            "icon": "https://img.icons8.com/color/48/000000/postgreesql.png"
+        },
+        {
+            "name": "MongoDB",
+            "icon": "https://img.icons8.com/color/48/000000/mongodb.png"
+        },
+        {
+            "name": "SQL Server",
+            "icon": "https://img.icons8.com/?size=100&id=laYYF3dV0Iew&format=png&color=000000"
+        },
+        {
+            "name": "Prisma ORM",
+            "icon": "https://d2eip9sf3oo6c2.cloudfront.net/tags/images/000/001/287/square_480/prismaHD.png"
+        }
+    ],
+    "caching": [
+        
+        {
+            "name": "Redis",
+            "icon": "https://img.icons8.com/color/48/000000/redis.png"
+        }
+    ],
+    "cloud": [
+        {
+            "name": "Docker",
+            "icon": "https://img.icons8.com/color/48/000000/docker.png"
+        },
+        {
+            "name": "Vercel",
+            "icon": "https://pipedream.com/s.v0/app_XaLh2x/logo/orig"
+        },
+        {
+            "name": "Render",
+            "icon": "https://media.licdn.com/dms/image/v2/D4E0BAQGGDoFoqHtOvA/company-logo_200_200/company-logo_200_200/0/1702595267620/renderco_logo?e=2147483647&v=beta&t=ZYrxKUyruOEupgw5Lr5amgwgBCJq8VXH8r05Qr5CeQc"
+        },
+        {
+            "name": "Cloudflare",
+            "icon": "https://img.icons8.com/?size=100&id=fUGx53gD9Jof&format=png&color=000000"
+        }
+    ],
+    "tools": [
+        {
+            "name": "Git & GitHub",
+            "icon": "https://img.icons8.com/color/48/000000/git.png"
+        },
+        {
+            "name": "Postman",
+            "icon": "https://img.icons8.com/?size=100&id=EPbEfEa7o8CB&format=png&color=000000"
+        },
+        {
+            "name": "Thunder Client",
+            "icon": "https://avatars.githubusercontent.com/u/164544218?s=200&v=4"
+            },
+        {
+            "name": "VS Code",
+            "icon": "https://img.icons8.com/color/48/000000/visual-studio-code-2019.png"
+        },
+        {
+            "name": "Visual Studio",
+            "icon": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/Visual_Studio_Icon_2026.svg/1200px-Visual_Studio_Icon_2026.svg.png"
+        }
+    ]
+}

@@ -1,5 +1,11 @@
 $(document).ready(function () {
 
+    // Load skills from JSON file
+    loadSkills();
+    
+    // Load projects from JSON file
+    loadProjects();
+
     $('#menu').click(function () {
         $(this).toggleClass('fa-times');
         $('.navbar').toggleClass('nav-toggle');
@@ -71,7 +77,7 @@ document.addEventListener('visibilitychange',
 
 // <!-- typed js effect starts -->
 var typed = new Typed(".typing-text", {
-    strings: ["frontend development", "backend development", "web designing", "android development", "web development"],
+    strings: ["frontend development", "backend development", "android development", "web development"],
     loop: true,
     typeSpeed: 50,
     backSpeed: 25,
@@ -110,7 +116,7 @@ function showProjects(projects) {
     projects.slice(0, 10).filter(project => project.category != "android").forEach(project => {
         projectHTML += `
         <div class="box tilt">
-      <img draggable="false" src="/assets/images/projects/${project.image}.png" alt="project" />
+      <img draggable="false" src="./assets/images/projects/${project.image}.png" alt="project" />
       <div class="content">
         <div class="tag">
         <h3>${project.name}</h3>
@@ -132,17 +138,6 @@ function showProjects(projects) {
         max: 15,
     });
     // <!-- tilt js effect ends -->
-
-    /* ===== SCROLL REVEAL ANIMATION ===== */
-    const srtop = ScrollReveal({
-        origin: 'top',
-        distance: '80px',
-        duration: 1000,
-        reset: true
-    });
-
-    /* SCROLL PROJECTS */
-    srtop.reveal('.work .box', { interval: 200 });
 
 }
 
@@ -190,25 +185,14 @@ document.onkeydown = function (e) {
     }
 }
 
-// Start of Tawk.to Live Chat
-var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
-(function () {
-    var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
-    s1.async = true;
-    s1.src = 'https://embed.tawk.to/60df10bf7f4b000ac03ab6a8/1f9jlirg6';
-    s1.charset = 'UTF-8';
-    s1.setAttribute('crossorigin', '*');
-    s0.parentNode.insertBefore(s1, s0);
-})();
-// End of Tawk.to Live Chat
-
-
 /* ===== SCROLL REVEAL ANIMATION ===== */
 const srtop = ScrollReveal({
     origin: 'top',
     distance: '80px',
     duration: 1000,
-    reset: true
+    reset: false,
+    viewFactor: 0.2,  // Element reveals when 20% is visible
+    viewOffset: { top: 50, bottom: 50 }  // Offset from viewport edges
 });
 
 /* SCROLL HOME */
@@ -232,20 +216,143 @@ srtop.reveal('.about .content .box-container', { delay: 200 });
 srtop.reveal('.about .content .resumebtn', { delay: 200 });
 
 
-/* SCROLL SKILLS */
-srtop.reveal('.skills .container', { interval: 200 });
-srtop.reveal('.skills .container .bar', { delay: 400 });
-
 /* SCROLL EDUCATION */
 srtop.reveal('.education .box', { interval: 200 });
-
-/* SCROLL PROJECTS */
-srtop.reveal('.work .box', { interval: 200 });
 
 /* SCROLL EXPERIENCE */
 srtop.reveal('.experience .timeline', { delay: 400 });
 srtop.reveal('.experience .timeline .container', { interval: 400 });
 
+// Function to load skills from JSON and display them by category
+function loadSkills() {
+    fetch('./skills.json')
+        .then(response => response.json())
+        .then(data => {
+            const skillsContainer = document.getElementById('skillsContainer');
+            skillsContainer.innerHTML = '';
+            
+            const categoryLabels = {
+                languages: 'Programming Languages',
+                frontend: 'Frontend',
+                backend: 'Backend & APIs',
+                databases: 'Databases',
+                cloud: 'Cloud & DevOps',
+                tools: 'Tools & Platforms'
+            };
+            
+            for (const [category, skills] of Object.entries(data)) {
+                // Add category heading
+                const heading = document.createElement('h3');
+                heading.textContent = categoryLabels[category] || category;
+                skillsContainer.appendChild(heading);
+                
+                // Create grid container for this category
+                const grid = document.createElement('div');
+                grid.className = 'skills-grid';
+                
+                // Add skills for this category
+                skills.forEach(skill => {
+                    const skillBar = document.createElement('div');
+                    skillBar.className = 'bar';
+                    
+                    const infoDiv = document.createElement('div');
+                    infoDiv.className = 'info';
+                    
+                    const img = document.createElement('img');
+                    img.src = skill.icon;
+                    img.alt = skill.name;
+                    
+                    const span = document.createElement('span');
+                    span.textContent = skill.name;
+                    
+                    infoDiv.appendChild(img);
+                    infoDiv.appendChild(span);
+                    skillBar.appendChild(infoDiv);
+                    grid.appendChild(skillBar);
+                });
+                
+                skillsContainer.appendChild(grid);
+            }
+            
+            // Apply scroll reveal animation after content is loaded
+            srtop.reveal('.skills .container .row > h3', { interval: 100 });
+            srtop.reveal('.skills .container .bar', { interval: 50 });
+        })
+        .catch(error => console.error('Error loading skills:', error));
+}
+
+// Function to load projects from JSON and display them
+function loadProjects() {
+    fetch('./projects/projects.json')
+        .then(response => response.json())
+        .then(data => {
+            const projectsContainer = document.getElementById('projectsContainer');
+            projectsContainer.innerHTML = '';
+            
+            data.forEach(project => {
+                const projectBox = document.createElement('div');
+                projectBox.className = 'box tilt';
+                
+                const contentDiv = document.createElement('div');
+                contentDiv.className = 'content';
+                
+                const tagDiv = document.createElement('div');
+                tagDiv.className = 'tag';
+                
+                const projectTitle = document.createElement('h3');
+                projectTitle.textContent = project.name;
+                tagDiv.appendChild(projectTitle);
+                
+                const descDiv = document.createElement('div');
+                descDiv.className = 'desc';
+                
+                const projectDesc = document.createElement('p');
+                projectDesc.textContent = project.desc;
+                descDiv.appendChild(projectDesc);
+                
+                const btnsDiv = document.createElement('div');
+                btnsDiv.className = 'btns';
+                
+                const viewLink = document.createElement('a');
+                viewLink.href = project.links.view;
+                viewLink.className = 'btn';
+                viewLink.target = '_blank';
+                viewLink.innerHTML = '<i class="fas fa-eye"></i> View';
+                
+                const codeLink = document.createElement('a');
+                codeLink.href = project.links.code;
+                codeLink.className = 'btn';
+                codeLink.target = '_blank';
+                codeLink.innerHTML = 'Code <i class="fas fa-code"></i>';
+                
+                btnsDiv.appendChild(viewLink);
+                btnsDiv.appendChild(codeLink);
+                
+                descDiv.appendChild(btnsDiv);
+                contentDiv.appendChild(tagDiv);
+                contentDiv.appendChild(descDiv);
+                projectBox.appendChild(contentDiv);
+                projectsContainer.appendChild(projectBox);
+            });
+            
+            // Show or hide "View All" button based on project count
+            const viewAllBtn = document.querySelector('.work .viewall');
+            if (data.length > 6) {
+                viewAllBtn.style.display = 'flex';
+            } else {
+                viewAllBtn.style.display = 'none';
+            }
+            
+            // Apply tilt effect after content is loaded
+            VanillaTilt.init(document.querySelectorAll('.work .box.tilt'), {
+                max: 15,
+            });
+            
+            // Apply scroll reveal animation after content is loaded
+            srtop.reveal('.work .box', { interval: 100 });
+        })
+        .catch(error => console.error('Error loading projects:', error));
+}
 /* SCROLL CONTACT */
 srtop.reveal('.contact .container', { delay: 400 });
 srtop.reveal('.contact .container .form-group', { delay: 400 });
