@@ -732,13 +732,13 @@ header .navbar ul li a:hover {
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
   position: relative;
   overflow: hidden;
-  /* height: 40rem; */
+  height: 22rem;
   /* aspect-ratio: 16 / 9; */
 }
 .work .box-container .box img {
   height: 100%;
   width: 100%;
-  object-fit: contain;
+  object-fit: cover;
   background: #000;
 }
 .work .box-container .box .content {
