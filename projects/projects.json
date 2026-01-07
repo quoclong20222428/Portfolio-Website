@@ -48,5 +48,15 @@
       "view": "#",
       "code": "https://github.com/quoclong20222428/Caculator_App_Andr"
     }
+  },
+  {
+    "name": "Portfolio",
+    "desc": "A personal portfolio website to showcase my projects and skills.",
+    "image": "portfolio",
+    "category": "basicweb",
+    "links": {
+      "view": "https://quoclong-portfolio.vercel.app/",
+      "code": "https://github.com/quoclong20222428/Portfolio-Website"
+    }
   }
 ]
