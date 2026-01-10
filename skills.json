@@ -81,6 +81,16 @@
             "icon": "https://mona.solutions/wp-content/uploads/2017/01/Gmail_la_gi-1000x727.png"
         }
     ],
+    "Mobile Development (Basic Exposure)": [
+        {
+            "name": "React Native",
+            "icon": "https://img.icons8.com/color/48/000000/react-native.png"
+        },
+        {
+            "name": "Expo",
+            "icon": "https://avatars.githubusercontent.com/u/12504344?s=200&v=4"
+        }
+    ],
     "databases": [
         {
             "name": "PostgreSQL",
