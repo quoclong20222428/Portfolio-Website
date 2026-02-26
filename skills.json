@@ -70,7 +70,7 @@
         },
         {
             "name": "JWT",
-            "icon": "https://blog.kakaocdn.net/dna/cqbtEQ/btrZISJO4rM/AAAAAAAAAAAAAAAAAAAAAIaJndWGmu8hq7i91HglLZdD6sZLIBnxnRjVBitVl80C/img.png?credential=yqXZFxpELC7KVnFOS48ylbz2pIh7yKj8&expires=1769871599&allow_ip=&allow_referer=&signature=uZ5BbDEtsCxcIGdpxu9WhCMTe0Y%3D"
+            "icon": "https://www.jwt.io/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fjwt-flower.f20616b0.png&w=1920&q=75"
         },
         {
             "name": "Google OAuth 2.0",
