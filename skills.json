@@ -40,7 +40,7 @@
         },
         {
             "name": "Tailwind CSS",
-            "icon": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Tailwind_CSS_Logo.svg/48px-Tailwind_CSS_Logo.png"
+            "icon": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/06/Tailwind_CSS_logo_with_dark_text.svg/330px-Tailwind_CSS_logo_with_dark_text.svg.png"
         },
         {
             "name": "Bootstrap",
@@ -54,7 +54,7 @@
     "backend": [
         {
             "name": "Node.js",
-            "icon": "https://www.freepnglogos.com/uploads/javascript-png/javascript-nodejs-logo-27.png"
+            "icon": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Node.js_logo.svg/1280px-Node.js_logo.svg.png"
         },
         {
             "name": "Express.js",
