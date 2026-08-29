@@ -117,38 +117,170 @@ function showSkills(skills) {
   skillsContainer.innerHTML = skillHTML;
 }
 
+// GitHub API Configuration
+const GITHUB_USERNAME = 'quoclong20222428';
+const GITHUB_API_URL = `https://api.github.com/users/${GITHUB_USERNAME}/repos?per_page=100`;
+
+// Technology name formatting mapping
+const techNameMap = {
+    'react': 'React',
+    'vue': 'Vue',
+    'angular': 'Angular',
+    'nodejs': 'Node.js',
+    'node.js': 'Node.js',
+    'expressjs': 'Express.js',
+    'express': 'Express',
+    'fastapi': 'FastAPI',
+    'python': 'Python',
+    'javascript': 'JavaScript',
+    'typescript': 'TypeScript',
+    'java': 'Java',
+    'spring-boot': 'Spring Boot',
+    'spring': 'Spring',
+    'postgresql': 'PostgreSQL',
+    'mongodb': 'MongoDB',
+    'mysql': 'MySQL',
+    'docker': 'Docker',
+    'kubernetes': 'Kubernetes',
+    'tailwindcss': 'Tailwind CSS',
+    'bootstrap': 'Bootstrap',
+    'sass': 'Sass',
+    'webpack': 'Webpack',
+    'vite': 'Vite',
+    'git': 'Git',
+    'aws': 'AWS',
+    'gcp': 'GCP',
+    'azure': 'Azure',
+    'graphql': 'GraphQL',
+    'rest-api': 'REST API',
+    'html': 'HTML',
+    'css': 'CSS'
+};
+
+function formatTechName(topic) {
+    if (!topic) return '';
+    const lowerTopic = topic.toLowerCase();
+    if (techNameMap[lowerTopic]) {
+        return techNameMap[lowerTopic];
+    }
+    return topic
+        .split('-')
+        .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+        .join(' ');
+}
+
+function getDefaultProjects() {
+    return [
+        {
+            name: 'Weather Forecast',
+            description: 'A full-stack web real-time weather with location search and weather forecast data.',
+            html_url: 'https://github.com/quoclong20222428/weather-forecast-fe',
+            topics: ['react', 'typescript', 'nodejs', 'mongodb']
+        },
+        {
+            name: 'Sudoku Solver',
+            description: 'Full-stack Sudoku game with user authentication, game saving, intelligent hints.',
+            html_url: 'https://github.com/quoclong20222428/sudoku-game',
+            topics: ['react', 'expressjs', 'mongodb', 'javascript']
+        },
+        {
+            name: 'FlowLite',
+            description: 'Full-featured task management platform for group members or individuals.',
+            html_url: 'https://github.com/tquocan04/mini-management-project',
+            topics: ['react', 'nodejs', 'tailwindcss']
+        },
+        {
+            name: 'To-Do List',
+            description: 'A web app task management, time-based filters, and real-time statistics dashboard.',
+            html_url: 'https://github.com/quoclong20222428/todo-list-frontend',
+            topics: ['react', 'javascript', 'css']
+        },
+        {
+            name: 'Weather App',
+            description: 'Weather application with real-time data and forecasts.',
+            html_url: 'https://github.com/quoclong20222428/weather-forecast-fe',
+            topics: ['javascript', 'html', 'css']
+        },
+        {
+            name: 'Sudoku Game',
+            description: 'Interactive Sudoku puzzle game with solver.',
+            html_url: 'https://github.com/quoclong20222428/sudoku-game',
+            topics: ['game', 'javascript', 'puzzle']
+        }
+    ];
+}
+
+async function fetchGitHubProjects() {
+    try {
+        const response = await fetch(GITHUB_API_URL);
+        if (!response.ok) {
+            throw new Error(`GitHub API error: ${response.status}`);
+        }
+        const repos = await response.json();
+        // Filter: only public repos, non-forks, and exclude readme repo
+        const filteredRepos = repos.filter(repo => 
+            repo.private === false && 
+            repo.fork === false &&
+            repo.name !== 'quoclong20222428'
+        );
+        console.log('GitHub repos loaded:', filteredRepos.length);
+        return filteredRepos.length > 0 ? filteredRepos : getDefaultProjects();
+    } catch (error) {
+        console.error('Error fetching GitHub repos:', error);
+        console.log('Using default projects as fallback');
+        return getDefaultProjects();
+    }
+}
+
 function showProjects(projects) {
   let projectsContainer = document.querySelector("#work .box-container");
+  
+  if (!projectsContainer) {
+    console.warn('Projects container not found, retrying...');
+    setTimeout(() => showProjects(projects), 500);
+    return;
+  }
+  
+  console.log('Displaying projects:', projects.length);
   let projectHTML = "";
-  projects
-    .slice(0, 10)
-    .filter((project) => project.category != "unk")
-    .forEach((project) => {
-      let btn = project.links.view != "#" ? `<a href="${project.links.view}" class="btn" target="_blank"><i class="fas fa-eye"></i> View</a>` : '';
+  
+  // Limit to first 6 for homepage
+  projects.slice(0, 6).forEach((project) => {
+      const techBadges = project.topics && project.topics.length > 0
+          ? `<div class="tech-badges">${project.topics.map(t => `<span class="tech-badge">${formatTechName(t)}</span>`).join('')}</div>`
+          : '';
+      
       projectHTML += `
-        <div class="box tilt">
-      <img draggable="false" src="./assets/images/projects/${project.image}.png" alt="project" />
-      <div class="content">
-        <div class="tag">
-        <h3>${project.name}</h3>
-        </div>
-        <div class="desc">
-          <p>${project.desc}</p>
-          <div class="btns">
-            ${btn}
-            <a href="${project.links.code}" class="btn" target="_blank">Code <i class="fas fa-code"></i></a>
+        <div class="box">
+          <div class="content">
+            <div class="tag">
+              <i class="fas fa-code proj-icon"></i>
+              <h3>${project.name}</h3>
+            </div>
+            <div class="desc">
+              <p>${project.description || 'No description available.'}</p>
+              ${techBadges}
+              <a href="${project.html_url}" class="proj-link" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> View on GitHub</a>
+            </div>
           </div>
-        </div>
-      </div>
-    </div>`;
-    });
-  projectsContainer.innerHTML = projectHTML;
-
-  // <!-- tilt js effect starts -->
-  VanillaTilt.init(document.querySelectorAll(".tilt"), {
-    max: 15,
+        </div>`;
   });
-  // <!-- tilt js effect ends -->
+  projectsContainer.innerHTML = projectHTML;
+}
+
+async function loadProjects() {
+    try {
+        const repos = await fetchGitHubProjects();
+        if (repos && repos.length > 0) {
+            showProjects(repos);
+        } else {
+            console.log('No repos returned, using fallback');
+            showProjects(getDefaultProjects());
+        }
+    } catch (error) {
+        console.error('Error in loadProjects:', error);
+        showProjects(getDefaultProjects());
+    }
 }
 
 function showPublications(publications) {
@@ -206,13 +338,47 @@ function showAchievements(achievements) {
   achievementsContainer.innerHTML = achievementsHTML;
 }
 
+function showExperience(experiences) {
+  let experienceContainer = document.getElementById("experienceContainer");
+  let experienceHTML = "";
+  experiences.forEach((exp, index) => {
+    const position = index % 2 === 0 ? "right" : "left";
+    const skillBadges = exp.skills
+      ? `<div class="exp-badges">${exp.skills.map(skill => `<span class="exp-badge">${skill}</span>`).join('')}</div>`
+      : '';
+    
+    experienceHTML += `
+        <div class="container ${position}">
+          <div class="content">
+            <div class="tag">
+              <i class="fas fa-building exp-header-icon"></i>
+              <h2>${exp.position}</h2>
+            </div>
+            <div class="desc">
+              <h3>${exp.title}</h3>
+              <p class="exp-duration"><i class="far fa-calendar-alt"></i>${exp.duration}</p>
+              ${exp.description ? `<p>${exp.description}</p>` : ''}
+              ${skillBadges}
+            </div>
+          </div>
+        </div>
+    `;
+  });
+  experienceContainer.innerHTML = experienceHTML;
+}
+
 fetchData().then((data) => {
   showSkills(data);
 });
 
-fetchData("projects").then((data) => {
-  showProjects(data);
-});
+// Load GitHub projects
+loadProjects();
+
+// Load experience
+fetch("./experience.json")
+  .then((response) => response.json())
+  .then((data) => showExperience(data))
+  .catch((error) => console.error("Error loading experience:", error));
 
 // Load publications
 fetch("./publications.json")
@@ -377,78 +543,12 @@ function loadSkills() {
     .catch((error) => console.error("Error loading skills:", error));
 }
 
-// Function to load projects from JSON and display them
-function loadProjects() {
-  fetch("./projects/projects.json")
-    .then((response) => response.json())
-    .then((data) => {
-      const projectsContainer = document.getElementById("projectsContainer");
-      projectsContainer.innerHTML = "";
 
-      data.forEach((project) => {
-        const projectBox = document.createElement("div");
-        projectBox.className = "box tilt";
 
-        const contentDiv = document.createElement("div");
-        contentDiv.className = "content";
+// Function to load projects from JSON and display them (OLD - REMOVED)
+// Using GitHub API instead
 
-        const tagDiv = document.createElement("div");
-        tagDiv.className = "tag";
 
-        const projectTitle = document.createElement("h3");
-        projectTitle.textContent = project.name;
-        tagDiv.appendChild(projectTitle);
-
-        const descDiv = document.createElement("div");
-        descDiv.className = "desc";
-
-        const projectDesc = document.createElement("p");
-        projectDesc.textContent = project.desc;
-        descDiv.appendChild(projectDesc);
-
-        const btnsDiv = document.createElement("div");
-        btnsDiv.className = "btns";
-
-        const viewLink = document.createElement("a");
-        viewLink.href = project.links.view;
-        viewLink.className = "btn";
-        viewLink.target = "_blank";
-        viewLink.innerHTML = '<i class="fas fa-eye"></i> View';
-
-        const codeLink = document.createElement("a");
-        codeLink.href = project.links.code;
-        codeLink.className = "btn";
-        codeLink.target = "_blank";
-        codeLink.innerHTML = 'Code <i class="fas fa-code"></i>';
-
-        btnsDiv.appendChild(viewLink);
-        btnsDiv.appendChild(codeLink);
-
-        descDiv.appendChild(btnsDiv);
-        contentDiv.appendChild(tagDiv);
-        contentDiv.appendChild(descDiv);
-        projectBox.appendChild(contentDiv);
-        projectsContainer.appendChild(projectBox);
-      });
-
-      // Show or hide "View All" button based on project count
-      const viewAllBtn = document.querySelector(".work .viewall");
-      if (data.length > 6) {
-        viewAllBtn.style.display = "flex";
-      } else {
-        viewAllBtn.style.display = "none";
-      }
-
-      // Apply tilt effect after content is loaded
-      VanillaTilt.init(document.querySelectorAll(".work .box.tilt"), {
-        max: 15,
-      });
-
-      // Apply scroll reveal animation after content is loaded
-      srtop.reveal(".work .box", { interval: 100 });
-    })
-    .catch((error) => console.error("Error loading projects:", error));
-}
 /* SCROLL CONTACT */
 srtop.reveal(".contact .container", { delay: 400 });
 srtop.reveal(".contact .container .form-group", { delay: 400 });

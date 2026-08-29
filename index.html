@@ -46,9 +46,12 @@
           <li><a href="#about">About</a></li>
           <li><a href="#skills">Skills</a></li>
           <li><a href="#education">Education</a></li>
-          <li><a href="#work">Work</a></li>
+          <li><a href="#work">Projects</a></li>
           <li><a href="#experience">Experience</a></li>
-          <li><a href="#contact">Contact</a></li>
+          <li><a href="#publications">Publications</a></li>
+          <li><a href="#certifications">Certificates</a></li>
+          <li><a href="#achievements">Achievements</a></li>
+          <!-- <li><a href="#contact">Contact</a></li> -->
         </ul>
       </nav>
     </header>
@@ -190,11 +193,11 @@
             />
           </div>
           <div class="content">
-            <h3>Bachelor of Information Technology (Software Engineering)</h3>
+            <h3>Bachelor of Information Technology (Computer Science)</h3>
             <p>Ho Chi Minh City University of Education</p>
-            <h4>September 2022 - Present | Expected graduation: July 2026</h4>
+            <h4>September 2022 - June 2026</h4>
             <h4>
-              GPA (up to the 7th semester): <span data-field="gpa"></span>
+              GPA: <span data-field="gpa"></span>
             </h4>
           </div>
         </div>
@@ -220,47 +223,13 @@
     <!-- work project section ends -->
 
     <!-- experience section starts -->
-    <!-- <section class="experience" id="experience">
+    <section class="experience" id="experience">
+      <h2 class="heading"><i class="fas fa-briefcase"></i> Experience </h2>
 
-  <h2 class="heading"><i class="fas fa-briefcase"></i> Experience </h2>
-
-  <div class="timeline">
-
-    <div class="container right">
-      <div class="content">
-        <div class="tag">
-          <h2>Self Employed</h2>
-        </div>
-        <div class="desc">
-            <h3>Full Stack Developer</h3>
-            <p>Oct 2021 - present</p>
-        </div>
+      <div class="timeline" id="experienceContainer">
+        <!-- Experience loaded from JSON -->
       </div>
-    </div>
-
-    <div class="container left">
-      <div class="content">
-        <div class="tag">
-          <h2>Mapstreak Flyseas</h2>
-        </div>
-        <div class="desc">
-            <h3>Web Developer | Internship</h3>
-            <p>June 2021 - Dec 2021</p>
-        </div>
-      </div>
-    </div>
-
-  </div>
-
-  <div class="morebtn">
-    <a href="/experience/index.html" class="btn"><span>View All</span>
-      <i class="fas fa-arrow-right"></i>
-  </a>
-  </div>
-
-</div>
-
-</section> -->
+    </section>
     <!-- experience section ends -->
 
     <section class="education" id="publications">
@@ -315,8 +284,11 @@
           <a href="#education"
             ><i class="fas fa-chevron-circle-right"></i> education</a
           >
-          <a href="#work"><i class="fas fa-chevron-circle-right"></i> work</a>
-          <!-- <a href="#experience"><i class="fas fa-chevron-circle-right"></i> experience</a> -->
+          <a href="#work"><i class="fas fa-chevron-circle-right"></i> projects</a>
+          <a href="#experience"><i class="fas fa-chevron-circle-right"></i> experience</a>
+          <a href="#publications"><i class="fas fa-chevron-circle-right"></i> publications</a>
+          <a href="#certifications"><i class="fas fa-chevron-circle-right"></i> certificates</a>
+          <a href="#achievements"><i class="fas fa-chevron-circle-right"></i> achievements</a>
         </div>
 
         <div class="box">
@@ -414,7 +386,7 @@
         phone: "+84 963 077 387",
         email: "longtq090204@gmail.com",
         location: "Ho Chi Minh City, Vietnam",
-        gpa: "3.33/4.0",
+        gpa: "3.4/4.0",
       };
 
       document.querySelectorAll("[data-field]").forEach((el) => {

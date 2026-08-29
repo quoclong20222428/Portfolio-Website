@@ -1,0 +1,765 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link id='favicon' rel="shortcut icon" href="/assets/images/favicon.png" type="image/x-png">
+    <title>Projects | Quoc Long Tran</title>
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap");
+        @import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&display=swap');
+
+        *{
+          margin: 0;
+          padding: 0;
+          box-sizing: border-box;
+          text-decoration: none;
+          outline: none; border: none;
+          text-transform:capitalize;
+          transition: all .2s linear;
+        }
+        html{
+          font-size: 62.5%;
+          overflow-x: hidden;
+          scroll-behavior: smooth;
+        }
+        body{
+          background: #f7f7f7;
+          font-family: 'Poppins', sans-serif;
+        }
+
+        *::selection{
+          background: #2b3dda;
+          color: #fff;
+        }
+
+        html{
+          font-size: 62.5%;
+          overflow-x: hidden;
+        }
+        html::-webkit-scrollbar{
+          width: .8rem;
+        }
+        html::-webkit-scrollbar-track{
+          background: rgb(235, 202, 245);
+        }
+        html::-webkit-scrollbar-thumb{
+          background: #420177;
+        }
+
+        /* navbar starts */
+        header{
+          position: fixed;
+          top: 0; left: 0; right: 0;
+          z-index: 1000;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          padding: 1.7rem 10%;
+          height: 6.5rem;
+          background-color: #fff;
+          box-shadow: 0 1px 4px rgba(146,161,176,.3);
+        }
+        section{
+          min-height: 100vh;
+          padding: 2rem 9%;
+        }
+        .heading{
+          font-size: 3.5rem;
+          color: rgb(32, 32, 32);
+          font-weight: 800;
+          text-align: center;
+        }
+        .heading span{
+          color: rgb(115, 3, 167);
+        }
+        header .logo{
+          font-size: 1.9rem;
+          font-weight: 800;
+          text-decoration: none;
+          color: #0E2431;
+        }
+        header .logo i {
+          font-size: 2.2rem;
+        }
+        header .logo:hover {
+          color: #fc8c05;
+        }
+        header .navbar ul{
+          list-style: none;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+        header .navbar li{
+          margin-left: 2.5rem;
+        }
+        header .navbar ul li a{
+          font-size: 1.57rem;
+          color: #0E2431;
+          font-weight: 600;
+          text-decoration: none;
+          letter-spacing: 0.04rem;
+        }
+        header .navbar ul li a.active,
+        header .navbar ul li a:hover{
+          color: #011aff;
+          border-bottom: .2rem solid #011aff;
+          padding: .5rem 0;
+        }
+        /* navbar ends */
+
+        /* hamburger icon starts*/
+        #menu{
+          font-size: 3rem;
+          cursor: pointer;
+          color: rgb(24, 2, 63);
+          display: none;
+        }
+        @media(max-width:768px){
+          #menu{
+              display: block;
+          }
+          header .navbar{
+            position: fixed;
+            top: 6.5rem; right: -120%;
+            width: 75%;
+            height: 100%;
+            text-align: left;
+            align-items: flex-start;
+            background-color: #0e0f31;
+          }
+          header .navbar ul{
+            flex-flow: column;
+            padding: 1rem;
+          }
+          header .navbar ul li{
+            text-align: center;
+            width: 100%;
+            margin: 1rem 0;
+            border-radius: .5rem;
+            width: 26rem;
+          }
+          header .navbar ul li a{
+            display: block;
+            padding: 1rem;
+            text-align: left;
+            color: #fff;
+            font-size: 2rem;
+          }
+          header .navbar ul li a.active,
+          header .navbar ul li a:hover{
+            padding: 1rem;
+            color: #fff;
+            border-radius: .5rem;
+            border-bottom: .5rem solid #011aff;
+          }
+          .fa-times{
+            transform: rotate(180deg);
+          }
+          header .navbar.nav-toggle{
+            right: 0;
+          }
+        }
+        /* hamburger icon ends */
+
+        /* work section starts */
+        .work{
+          /* background: #010124; */
+          background: linear-gradient(to bottom, #010136, #00003a);
+          margin-top: 5rem;
+        }
+        .work h2{
+          color: #fff;
+          padding: 1rem;
+        }
+        .work .heading span{
+          color: rgb(255, 230, 0);
+        }
+        .work .button-group{
+          display: flex;
+          flex-wrap: wrap;
+          gap:1rem;
+          margin: 2rem auto;
+          width: 50%;
+          justify-content: center;
+          align-items: center;
+        }
+        .work .button-group .btn{
+          outline: none;
+          padding: 1rem 2rem;
+          background: transparent;
+          color: #fff;
+          border: 1px solid #fff;
+          border-radius: 3px;
+          cursor: pointer;
+          font-weight: 500;
+        }
+        .work .button-group .btn:hover{
+          background-color: #fff;
+          color: #000;
+        }
+        .work .button-group .btn.is-checked{
+          background-color: #fff;
+          color: #000;
+        }
+        .work .box-container{
+          display: flex;
+          flex-wrap: wrap;
+          gap:1.5rem;
+          margin: 2rem;
+        }
+        .work .box-container .box{
+          flex:1 1 30rem;
+          border-radius: .5rem;
+          box-shadow: 0 .7rem 1rem rgba(0,0,0,.3);
+          position: relative;
+          overflow:hidden;
+          height:21rem;
+          background: #fff;
+          border: none;
+        }
+        .work .box-container .box img{
+          height: 100%;
+          width:100%;
+          object-fit: cover;
+        }
+        .work .box-container .box .content{
+          height: 100%;
+          width:100%;
+          position: absolute;
+          top:85%; left:0;
+          background:rgba(255, 255, 255, 0.9);
+          display: flex;
+          flex-direction: column;
+        }
+        .work .box-container .box .content .tag{
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+          align-items: center;
+          height: 4.5rem;
+          width: 100%;
+          padding-left: 1rem;
+          background: #ffd900;
+        }
+        .work .box-container .box .content .tag h3{
+          font-size: 2rem;
+        }
+        .work .box-container .box:hover .content{
+          top: 5%;
+        }
+        .work .desc {
+          margin: 2rem;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+        }
+        .work .desc p{
+          font-size: 1.5rem;
+        }
+        .work .desc .btns{
+          display: flex;
+          justify-content: space-between;
+          width: 100%;
+          margin-top: 2rem;
+        }
+        .work .desc .btns .btn{
+          line-height: 0;
+          display: inline;
+          padding: 1.5rem 2.5rem;
+          border-radius: .5rem;
+          font-size: 1.5rem;
+          color: #fff;
+          background: rgb(12, 12, 12);
+          margin-right: 2rem;
+          text-decoration: none;
+          cursor: pointer;
+          transition: all 0.3s ease;
+        }
+        .work .desc .btns .btn:hover{
+          background: #310ae0f5;
+        }
+
+        @media screen and (max-width: 450px) {
+          .work .button-group{
+            width: 100%;
+          }
+          .work .box-container{
+            margin: 0rem;
+          }
+          .work .box-container .grid-item .box{
+            width: 95% !important;
+          }
+        }
+
+        /* back to home button */
+        .backbtn{
+          display: flex;
+          justify-content: center;
+          margin-bottom: 2rem;
+          margin-top: 4rem;
+        }
+        .backbtn .btn {
+          position: relative;
+          line-height: 0;
+          padding: 1.6rem 3rem;
+          border-radius: .5em;
+          transition: 0.3s;
+          color: #fff;
+          border: 2px solid #fff;
+          box-shadow: 0px 2px 4px rgba(48, 68, 247, .3);
+          text-align: center;
+          text-decoration: none;
+        }
+        .backbtn .btn span {
+          font-weight: 600;
+          font-size: 1.7rem;
+          font-family: 'Nunito', sans-serif;
+        }
+        .backbtn .btn i {
+          margin-right: 0.5rem;
+          font-size: 1.5rem;
+          transition: 0.3s;
+        }
+        .backbtn .btn:hover{
+          background: #ffffff;
+          color: #000;
+        }
+        .backbtn .btn:hover i {
+          transform: translateX(-8px);
+        }
+        /* work section ends */
+
+        /* common media queries starts*/
+        @media(max-width:450px){
+          html{
+            font-size: 55%;
+          }
+          body{
+            padding-right: 0;
+          }
+          section{
+            padding: 2rem;
+          }
+        }
+        /* common media queries ends*/
+
+
+        /* scroll top starts */
+        #scroll-top{
+          position: fixed;
+          top: -140%;
+          right: 2rem;
+          padding: 1rem 1.5rem;
+          font-size: 2rem;
+          background: #ffae00;
+          color: rgb(13, 0, 44);
+          border-radius: 5rem;
+          transition: 1s linear;
+          z-index: 1000;
+          text-decoration: none;
+          cursor: pointer;
+        }
+        #scroll-top.active{
+          top: calc(100% - 12rem);
+        }
+        /* scroll top ends */
+    </style>
+</head>
+<body oncontextmenu="return false">
+
+<!-- navbar starts -->
+<header>
+        <a href="/" class="logo"><i class="fab fa-node-js"></i> TQL</a>
+
+        <div id="menu" class="fas fa-bars"></div>
+        <nav class="navbar">
+            <ul>
+            <li><a href="/#home">Home</a></li>
+            <li><a href="/#about">About</a></li>
+            <li><a href="/#skills">Skills</a></li>
+            <li><a href="/#education">Education</a></li>
+            <li><a class="active" href="/#work">Work</a></li>
+            <li><a href="/#experience">Experience</a></li>
+            <li><a href="/#contact">Contact</a></li>
+            </ul>
+        </nav>
+</header>
+<!-- navbar ends -->
+
+<!-- work project section starts -->
+<section class="work" id="work">
+
+  <h2 class="heading"><i class="fas fa-laptop-code"></i> Projects <span>Made</span></h2>
+  
+  <div id="filters" class="button-group">
+    <button class="btn is-checked" data-filter="*">All Projects</button>
+    <button class="btn" data-filter=".basicweb">Basic Web</button>
+    <button class="btn" data-filter=".android">Android App</button>
+  </div>
+
+  <div class="box-container">
+    <!-- Projects will be loaded here dynamically from GitHub API -->
+  </div>
+
+  <div class="backbtn">
+    <a href="/#work" class="btn">
+        <i class="fas fa-arrow-left"></i>
+        <span>Back to Home</span>
+    </a>
+  </div>
+
+</section>
+<!-- work project section ends -->
+
+<!-- scroll top btn -->
+<a href="#work" class="fas fa-angle-up" id="scroll-top"></a>
+<!-- scroll back to top -->
+
+
+<!-- ==== ALL MAJOR JAVASCRIPT CDNS STARTS ==== -->
+<!-- jquery cdn -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<!-- vanilla tilt.js links -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.0/vanilla-tilt.min.js" integrity="sha512-SttpKhJqONuBVxbRcuH0wezjuX+BoFoli0yPsnrAADcHsQMW8rkR84ItFHGIkPvhnlRnE2FaifDOUw+EltbuHg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<!-- scroll reveal anim -->
+<script src="https://unpkg.com/scrollreveal"></script>
+
+<!-- isotope filter plugin cdn -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js" integrity="sha512-Zq2BOxyhvnRFXu0+WE6ojpZLOU2jdnqbrM1hmVdGzyeCa1DgM3X5Q4A/Is9xA1IkbUeDd7755dNNI/PzSf2Pew==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<!-- ==== ALL MAJOR JAVASCRIPT CDNS ENDS ==== -->
+
+<script>
+$(document).ready(function () {
+
+    $('#menu').click(function () {
+        $(this).toggleClass('fa-times');
+        $('.navbar').toggleClass('nav-toggle');
+    });
+
+    $(window).on('scroll load', function () {
+        $('#menu').removeClass('fa-times');
+        $('.navbar').removeClass('nav-toggle');
+
+        if (window.scrollY > 60) {
+            document.querySelector('#scroll-top').classList.add('active');
+        } else {
+            document.querySelector('#scroll-top').classList.remove('active');
+        }
+    });
+});
+
+document.addEventListener('visibilitychange',
+    function () {
+        if (document.visibilityState === "visible") {
+            document.title = "Projects | Portfolio Quoc Long Tran";
+            $("#favicon").attr("href", "/assets/images/favicon.png");
+        }
+        else {
+            document.title = "Come Back To Portfolio";
+            $("#favicon").attr("href", "/assets/images/favhand.png");
+        }
+    });
+
+
+// ===== GitHub API Integration =====
+// GitHub API Configuration
+const GITHUB_USERNAME = 'quoclong20222428';
+const GITHUB_API_URL = `https://api.github.com/users/${GITHUB_USERNAME}/repos?per_page=100`;
+
+// Technology name formatting mapping
+const techNameMap = {
+    'react': 'React',
+    'vue': 'Vue',
+    'angular': 'Angular',
+    'nodejs': 'Node.js',
+    'node.js': 'Node.js',
+    'expressjs': 'Express.js',
+    'express': 'Express',
+    'fastapi': 'FastAPI',
+    'python': 'Python',
+    'javascript': 'JavaScript',
+    'typescript': 'TypeScript',
+    'java': 'Java',
+    'spring-boot': 'Spring Boot',
+    'spring': 'Spring',
+    'postgresql': 'PostgreSQL',
+    'mongodb': 'MongoDB',
+    'mysql': 'MySQL',
+    'docker': 'Docker',
+    'kubernetes': 'Kubernetes',
+    'tailwindcss': 'Tailwind CSS',
+    'bootstrap': 'Bootstrap',
+    'sass': 'Sass',
+    'webpack': 'Webpack',
+    'vite': 'Vite',
+    'git': 'Git',
+    'aws': 'AWS',
+    'gcp': 'GCP',
+    'azure': 'Azure',
+    'graphql': 'GraphQL',
+    'rest-api': 'REST API',
+    'html': 'HTML',
+    'css': 'CSS'
+};
+
+/**
+ * Format technology name to readable format
+ * Converts lowercase topic to proper title case
+ */
+function formatTechName(topic) {
+    if (!topic) return '';
+    
+    const lowerTopic = topic.toLowerCase();
+    
+    // Check if we have a mapping for this topic
+    if (techNameMap[lowerTopic]) {
+        return techNameMap[lowerTopic];
+    }
+    
+    // Default formatting: capitalize first letter and replace hyphens with spaces
+    return topic
+        .split('-')
+        .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+        .join(' ');
+}
+
+/**
+ * Fetch repositories from GitHub API
+ */
+async function fetchGitHubRepos() {
+    try {
+        const response = await fetch(GITHUB_API_URL);
+        
+        if (!response.ok) {
+            throw new Error(`GitHub API error: ${response.status}`);
+        }
+        
+        const repos = await response.json();
+        
+        // Filter: only public repos and non-forks
+        const filteredRepos = repos.filter(repo => 
+            repo.private === false && repo.fork === false
+        );
+        
+        return filteredRepos;
+    } catch (error) {
+        console.error('Error fetching GitHub repos:', error);
+        throw error;
+    }
+}
+
+/**
+ * Display loading state
+ */
+function showLoadingState() {
+    const projectsContainer = document.querySelector(".work .box-container");
+    const loadingDiv = document.createElement('div');
+    loadingDiv.id = 'loading-projects';
+    loadingDiv.style.cssText = 'width: 100%; text-align: center; padding: 2rem; color: #fff; font-size: 1.5rem;';
+    loadingDiv.textContent = 'Loading projects...';
+    projectsContainer.innerHTML = '';
+    projectsContainer.appendChild(loadingDiv);
+}
+
+/**
+ * Display error state
+ */
+function showErrorState(error) {
+    const projectsContainer = document.querySelector(".work .box-container");
+    const errorDiv = document.createElement('div');
+    errorDiv.id = 'error-projects';
+    errorDiv.style.cssText = 'width: 100%; text-align: center; padding: 2rem; color: #fff; font-size: 1.5rem;';
+    
+    const errorMessage = document.createElement('p');
+    errorMessage.textContent = 'Unable to load projects from GitHub.';
+    
+    const fallbackLink = document.createElement('p');
+    fallbackLink.style.marginTop = '1rem';
+    const link = document.createElement('a');
+    link.href = `https://github.com/${GITHUB_USERNAME}`;
+    link.target = '_blank';
+    link.rel = 'noopener noreferrer';
+    link.textContent = `Visit my GitHub profile to see all projects`;
+    link.style.cssText = 'color: #ffd900; text-decoration: underline; cursor: pointer;';
+    fallbackLink.appendChild(link);
+    
+    errorDiv.appendChild(errorMessage);
+    errorDiv.appendChild(fallbackLink);
+    projectsContainer.innerHTML = '';
+    projectsContainer.appendChild(errorDiv);
+}
+
+/**
+ * Display empty state
+ */
+function showEmptyState() {
+    const projectsContainer = document.querySelector(".work .box-container");
+    const emptyDiv = document.createElement('div');
+    emptyDiv.id = 'empty-projects';
+    emptyDiv.style.cssText = 'width: 100%; text-align: center; padding: 2rem; color: #fff; font-size: 1.5rem;';
+    emptyDiv.textContent = 'No public personal projects available.';
+    projectsContainer.innerHTML = '';
+    projectsContainer.appendChild(emptyDiv);
+}
+
+/**
+ * Create a project card element
+ */
+function createProjectCard(repo) {
+    const card = document.createElement('div');
+    card.className = 'grid-item basicweb';
+    card.style.cssText = 'flex: 1 1 30rem; min-width: 300px;';
+    
+    const box = document.createElement('div');
+    box.className = 'box tilt';
+    box.style.cssText = 'width: 380px; margin: 1rem; background: #fff;';
+    
+    // Placeholder image
+    const img = document.createElement('img');
+    img.draggable = false;
+    img.src = 'https://via.placeholder.com/400x200/011aff/ffffff?text=' + encodeURIComponent(repo.name);
+    img.alt = repo.name;
+    img.style.cssText = 'height: 100%; width: 100%; object-fit: cover;';
+    
+    const content = document.createElement('div');
+    content.className = 'content';
+    
+    // Tag section with title
+    const tag = document.createElement('div');
+    tag.className = 'tag';
+    const h3 = document.createElement('h3');
+    h3.textContent = repo.name;
+    tag.appendChild(h3);
+    
+    // Description and details section
+    const desc = document.createElement('div');
+    desc.className = 'desc';
+    
+    const p = document.createElement('p');
+    p.textContent = repo.description || 'No description available.';
+    desc.appendChild(p);
+    
+    // Technology badges
+    if (repo.topics && repo.topics.length > 0) {
+        const techDiv = document.createElement('div');
+        techDiv.style.cssText = 'margin: 1rem 0; display: flex; flex-wrap: wrap; gap: 0.5rem;';
+        
+        repo.topics.forEach(topic => {
+            const badge = document.createElement('span');
+            badge.style.cssText = 'display: inline-block; padding: 0.4rem 0.8rem; background: #011aff; color: #fff; border-radius: 3px; font-size: 1rem;';
+            badge.textContent = formatTechName(topic);
+            techDiv.appendChild(badge);
+        });
+        
+        desc.appendChild(techDiv);
+    }
+    
+    // Buttons section
+    const btns = document.createElement('div');
+    btns.className = 'btns';
+    btns.style.cssText = 'display: flex; justify-content: space-between; width: 100%; margin-top: 2rem;';
+    
+    // GitHub button
+    const githubBtn = document.createElement('a');
+    githubBtn.href = repo.html_url;
+    githubBtn.target = '_blank';
+    githubBtn.rel = 'noopener noreferrer';
+    githubBtn.className = 'btn';
+    githubBtn.style.cssText = 'line-height: 0; display: inline; padding: 1.5rem 2.5rem; border-radius: .5rem; font-size: 1.5rem; color: #fff; background: rgb(12, 12, 12); margin-right: 2rem; text-decoration: none; cursor: pointer;';
+    githubBtn.innerHTML = '<i class="fab fa-github"></i> GitHub';
+    
+    btns.appendChild(githubBtn);
+    desc.appendChild(btns);
+    
+    content.appendChild(tag);
+    content.appendChild(desc);
+    box.appendChild(img);
+    box.appendChild(content);
+    card.appendChild(box);
+    
+    return card;
+}
+
+/**
+ * Display projects
+ */
+function showProjects(repos) {
+    const projectsContainer = document.querySelector(".work .box-container");
+    
+    if (repos.length === 0) {
+        showEmptyState();
+        return;
+    }
+    
+    projectsContainer.innerHTML = '';
+    
+    repos.forEach(repo => {
+        const projectCard = createProjectCard(repo);
+        projectsContainer.appendChild(projectCard);
+    });
+    
+    // Initialize isotope filter
+    var $grid = $('.box-container').isotope({
+        itemSelector: '.grid-item',
+        layoutMode: 'fitRows',
+        masonry: {
+            columnWidth: 200
+        }
+    });
+
+    // filter items on button click
+    $('.button-group').on('click', 'button', function () {
+        $('.button-group').find('.is-checked').removeClass('is-checked');
+        $(this).addClass('is-checked');
+        var filterValue = $(this).attr('data-filter');
+        $grid.isotope({ filter: filterValue });
+    });
+}
+
+// Load projects from GitHub
+async function loadGitHubProjects() {
+    showLoadingState();
+    
+    try {
+        const repos = await fetchGitHubRepos();
+        showProjects(repos);
+    } catch (error) {
+        console.error('Failed to load projects:', error);
+        showErrorState(error);
+    }
+}
+
+// Initialize projects on page load
+loadGitHubProjects();
+// ===== GitHub API Integration Ends =====
+
+// disable developer mode
+document.onkeydown = function (e) {
+    if (e.keyCode == 123) {
+        return false;
+    }
+    if (e.ctrlKey && e.shiftKey && e.keyCode == 'I'.charCodeAt(0)) {
+        return false;
+    }
+    if (e.ctrlKey && e.shiftKey && e.keyCode == 'C'.charCodeAt(0)) {
+        return false;
+    }
+    if (e.ctrlKey && e.shiftKey && e.keyCode == 'J'.charCodeAt(0)) {
+        return false;
+    }
+    if (e.ctrlKey && e.keyCode == 'U'.charCodeAt(0)) {
+        return false;
+    }
+}
+</script>
+
+</body>
+</html>

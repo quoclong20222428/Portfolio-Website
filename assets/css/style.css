@@ -711,104 +711,162 @@ header .navbar ul li a:hover {
 
 /* work section starts */
 .work {
-  /* background: #010124; */
-  background: linear-gradient(to bottom, #000031, #00002c);
+  background: #0f172a;
 }
 .work h2 {
-  color: #fff;
+  color: #f1f5f9;
   padding: 1rem;
 }
 .work .heading span {
-  color: rgb(255, 230, 0);
+  color: #818cf8;
 }
+
+/* Projects grid */
 .work .box-container {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 1.5rem;
-  margin: 2rem;
+  gap: 1.8rem;
+  margin: 2.5rem 1rem;
 }
+
 .work .box-container .box {
   border-radius: 0.5rem;
-  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
-  position: relative;
   overflow: hidden;
-  height: 22rem;
-  /* aspect-ratio: 16 / 9; */
-}
-.work .box-container .box img {
-  height: 100%;
-  width: 100%;
-  object-fit: cover;
-  background: #000;
-}
-.work .box-container .box .content {
-  height: 100%;
-  width: 100%;
-  position: absolute;
-  top: 85%;
-  left: 0;
-  background: rgba(255, 255, 255, 0.9);
+  background: #1e293b;
+  border: 1px solid #334155;
   display: flex;
   flex-direction: column;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
 }
+.work .box-container .box:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.4);
+  border-color: #4f46e5;
+}
+
+.work .box-container .box img {
+  display: none;
+}
+
+.work .box-container .box .content {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background: transparent;
+  position: static;
+}
+
+/* Card header – solid color, no gradient */
 .work .box-container .box .content .tag {
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
   align-items: center;
-  height: 4.5rem;
-  width: 100%;
-  padding-left: 1rem;
-  background: #ffd900;
+  gap: 1rem;
+  padding: 1.2rem 1.6rem;
+  background: #1e3a5f;
+  border-bottom: 2px solid #4f46e5;
 }
+
+.work .proj-icon {
+  font-size: 1.8rem;
+  color: #818cf8;
+  flex-shrink: 0;
+  line-height: 1;
+}
+
 .work .box-container .box .content .tag h3 {
-  font-size: 2rem;
+  font-size: 1.55rem;
+  font-weight: 700;
+  color: #e2e8f0;
+  letter-spacing: 0.02em;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
 }
-.work .box-container .box:hover .content {
-  top: 5%;
-}
+
 .work .desc {
-  margin: 2rem;
+  padding: 1.5rem 1.6rem;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  flex: 1;
+  gap: 1rem;
 }
+
 .work .desc p {
-  font-size: 1.5rem;
+  font-size: 1.35rem;
+  color: #94a3b8;
+  font-family: "Nunito", sans-serif;
+  font-weight: 500;
+  line-height: 1.65;
+  text-transform: none;
+  flex: 1;
 }
-.work .desc .btns {
+
+/* Tech badges */
+.work .tech-badges {
   display: flex;
-  justify-content: space-between;
-  width: 100%;
-  margin-top: 2rem;
+  flex-wrap: wrap;
+  gap: 0.5rem;
 }
-.work .desc .btns .btn {
-  line-height: 0;
-  display: inline;
-  padding: 1.5rem 2.5rem;
+.work .tech-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.25rem 0.8rem;
+  background: #0f172a;
+  border: 1px solid #334155;
+  color: #94a3b8;
+  border-radius: 0.4rem;
+  font-size: 1.1rem;
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  text-transform: none;
+  letter-spacing: 0.01em;
+  transition: border-color 0.2s, color 0.2s;
+}
+.work .box-container .box:hover .tech-badge {
+  border-color: #4f46e5;
+  color: #a5b4fc;
+}
+
+/* GitHub link */
+.work .proj-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.8rem 1.6rem;
   border-radius: 0.5rem;
-  font-size: 1.5rem;
+  background: #4f46e5;
+  border: none;
   color: #fff;
-  background: rgb(12, 12, 12);
-  margin-right: 2rem;
+  font-size: 1.3rem;
+  font-family: "Nunito", sans-serif;
+  font-weight: 700;
+  text-transform: none;
+  transition: background 0.2s ease, transform 0.2s ease;
+  align-self: flex-start;
+  margin-top: auto;
 }
-.work .desc .btns .btn:hover {
-  background: #310ae0f5;
+.work .proj-link i {
+  font-size: 1.4rem;
 }
+.work .proj-link:hover {
+  background: #4338ca;
+  transform: translateX(2px);
+}
+
 .work .viewall {
   display: flex;
   justify-content: center;
+  margin-top: 1rem;
 }
 .work .viewall .btn {
   position: relative;
   line-height: 0;
   padding: 1.6rem 3rem;
   border-radius: 0.5em;
-  transition: 0.5s;
-  color: rgb(255, 255, 255);
+  transition: 0.3s;
+  color: #f1f5f9;
   font-weight: 700;
-  border: 2px solid #fff;
-  box-shadow: 0px 5px 10px rgba(65, 84, 241, 0.4);
+  border: 2px solid #475569;
   text-align: center;
 }
 .work .viewall .btn span {
@@ -822,8 +880,9 @@ header .navbar ul li a:hover {
   transition: 0.3s;
 }
 .work .viewall .btn:hover {
-  background: #fff;
-  color: #000;
+  background: #4f46e5;
+  border-color: #4f46e5;
+  color: #fff;
 }
 .work .viewall .btn:hover i {
   transform: translateX(5px);
@@ -831,59 +890,62 @@ header .navbar ul li a:hover {
 /* work section ends */
 
 /* work section responsive */
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 1100px) {
   .work .box-container {
     grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
   }
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 650px) {
   .work .box-container {
     grid-template-columns: 1fr;
-    margin: 1rem;
+    margin: 1.5rem 0.5rem;
   }
 }
 /* work section responsive ends */
 
 /* experience section starts */
+.experience {
+  background: #eef2ff;
+}
 .experience .timeline {
   position: relative;
-  max-width: 1200px;
-  margin: 0 auto;
+  max-width: 1100px;
+  margin: 3rem auto 0;
+  padding-bottom: 2rem;
 }
 .experience .timeline::after {
   content: "";
   position: absolute;
-  width: 6px;
-  background: #020133;
+  width: 3px;
+  background: #cbd5e1;
+  border-radius: 2px;
   top: 0;
   bottom: 0;
   left: 50%;
-  margin-left: -3px;
-  z-index: -2;
+  margin-left: -1.5px;
+  z-index: 0;
 }
 .experience .container {
-  padding: 10px 40px;
+  padding: 1rem 4rem;
   position: relative;
   background-color: inherit;
   width: 50%;
+  z-index: 1;
 }
-/*circles on timeline*/
+/* dot on timeline */
 .experience .container::after {
-  content: "\f0b1";
+  content: "";
   position: absolute;
-  width: 25px;
-  height: 25px;
-  right: -17px;
-  background-color: rgb(255, 255, 255);
-  border: 4px solid #ff9f55;
-  top: 15px;
+  width: 14px;
+  height: 14px;
+  right: -7px;
+  background: #4f46e5;
+  border: 3px solid #f8fafc;
+  top: 2.4rem;
   border-radius: 50%;
   z-index: 100;
-  font-size: 1.89rem;
-  text-align: center;
-  font-weight: 600;
-  color: #02094b;
-  font-family: "Font Awesome\ 5 Free";
+  box-shadow: 0 0 0 3px #e0e7ff;
 }
 .experience .left {
   left: 0;
@@ -896,50 +958,125 @@ header .navbar ul li a:hover {
   content: " ";
   height: 0;
   position: absolute;
-  top: 22px;
+  top: 2.6rem;
   width: 0;
   z-index: 1;
-  right: 30px;
-  border: medium solid #f68c09;
-  border-width: 10px 0 10px 10px;
-  border-color: transparent transparent transparent #f68c09;
+  right: 2.6rem;
+  border: medium solid #fff;
+  border-width: 8px 0 8px 8px;
+  border-color: transparent transparent transparent #fff;
+  filter: drop-shadow(1px 0 2px rgba(0,0,0,0.06));
 }
-/* arrows pointing left  */
+/* arrows pointing left */
 .experience .right::before {
   content: " ";
   height: 0;
   position: absolute;
-  top: 22px;
+  top: 2.6rem;
   width: 0;
   z-index: 1;
-  left: 30px;
-  border: medium solid #f68c09;
-  border-width: 10px 10px 10px 0;
-  border-color: transparent #f68c09 transparent transparent;
+  left: 2.6rem;
+  border: medium solid #fff;
+  border-width: 8px 8px 8px 0;
+  border-color: transparent #fff transparent transparent;
+  filter: drop-shadow(-1px 0 2px rgba(0,0,0,0.06));
 }
 .experience .right::after {
-  left: -16px;
+  left: -7px;
+  right: auto;
 }
 .experience .content {
-  background-color: #f68c09;
-  position: relative;
-  border-radius: 6px;
+  background: #fff;
+  border-radius: 0.5rem;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+  overflow: hidden;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
 }
+.experience .content:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 28px rgba(79, 70, 229, 0.12);
+  border-color: #c7d2fe;
+}
+
+/* Card header – amber highlight */
 .experience .content .tag {
+  padding: 1.2rem 1.8rem;
+  background: #ffae00;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.experience .exp-header-icon {
+  font-size: 1.6rem;
+  color: #78350f;
+  flex-shrink: 0;
+}
+.experience .content .tag h2 {
   font-size: 1.3rem;
-  padding-top: 1.5rem;
-  padding-left: 1.5rem;
+  font-weight: 700;
+  color: #1c1917;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
 }
 .experience .content .desc {
-  margin-left: 1.5rem;
-  padding-bottom: 1rem;
+  padding: 1.6rem 1.8rem;
 }
 .experience .content .desc h3 {
-  font-size: 1.5rem;
+  font-size: 1.9rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin-bottom: 0.5rem;
+}
+.experience .content .desc .exp-duration {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.25rem;
+  color: #64748b;
+  font-family: "Nunito", sans-serif;
   font-weight: 600;
+  margin-bottom: 0.8rem;
+  text-transform: none;
+}
+.experience .content .desc .exp-duration i {
+  font-size: 1.2rem;
+  color: #4f46e5;
 }
 .experience .content .desc p {
-  font-size: 1.2rem;
+  font-size: 1.35rem;
+  color: #475569;
+  font-family: "Nunito", sans-serif;
+  font-weight: 500;
+  line-height: 1.65;
+  text-transform: none;
+  margin-bottom: 0.3rem;
+}
+/* Experience skill badges */
+.experience .exp-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.25rem 0.85rem;
+  background: #eff6ff;
+  border: 1px solid #bfdbfe;
+  color: #3730a3;
+  border-radius: 0.4rem;
+  font-size: 1.15rem;
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  text-transform: none;
+  letter-spacing: 0.01em;
+  transition: background 0.2s, border-color 0.2s;
+  margin: 0.2rem;
+}
+.experience .content:hover .exp-badge {
+  background: #e0e7ff;
+  border-color: #818cf8;
+}
+.experience .exp-badges {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 0.8rem;
 }
 /* view all button */
 .morebtn {
@@ -951,10 +1088,10 @@ header .navbar ul li a:hover {
   line-height: 0;
   padding: 1.6rem 3rem;
   border-radius: 0.5em;
-  transition: 0.5s;
+  transition: 0.3s;
   color: #fff;
-  background: #2506ad;
-  box-shadow: 0px 5px 10px rgba(48, 68, 247, 0.6);
+  background: #4f46e5;
+  box-shadow: 0 4px 14px rgba(79, 70, 229, 0.35);
   text-align: center;
 }
 .morebtn .btn span {
@@ -968,7 +1105,7 @@ header .navbar ul li a:hover {
   transition: 0.3s;
 }
 .morebtn .btn:hover {
-  background: #1a047e;
+  background: #4338ca;
 }
 .morebtn .btn:hover i {
   transform: translateX(5px);
@@ -983,27 +1120,30 @@ header .navbar ul li a:hover {
     margin-top: 2rem;
   }
   .experience .timeline::after {
-    left: 31px;
+    left: 20px;
   }
   .experience .container {
     width: 100%;
-    padding-left: 8rem;
-    padding-right: 2rem;
+    padding-left: 5rem;
+    padding-right: 1.5rem;
   }
   .experience .container::after {
-    font-size: 2.2rem;
+    left: 11px;
+    right: auto;
+    top: 2rem;
   }
   .experience .container::before {
-    left: 61px;
-    border: medium solid #f68c09;
+    left: 3.8rem;
+    right: auto;
+    border: medium solid #fff;
     border-width: 10px 10px 10px 0;
-    border-color: transparent #f68c09 transparent transparent;
+    border-color: transparent #fff transparent transparent;
   }
   .experience .left::after {
-    left: 15px;
+    left: 11px;
   }
   .experience .right::after {
-    left: 15px;
+    left: 11px;
   }
   .experience .right {
     left: 0%;
