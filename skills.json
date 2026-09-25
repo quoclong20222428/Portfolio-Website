@@ -1,10 +1,6 @@
 {
     "languages": [
         {
-            "name": "JavaScript",
-            "icon": "https://img.icons8.com/color/48/000000/javascript--v1.png"
-        },
-        {
             "name": "TypeScript",
             "icon": "https://img.icons8.com/color/48/000000/typescript.png"
         },
@@ -32,7 +28,7 @@
         },
         {
             "name": "Next.js",
-            "icon": "https://img.icons8.com/color/48/000000/nextjs.png"
+            "icon": "https://camo.githubusercontent.com/77adf5f52c8ec6ef1ebdd7008fed216c006cb190941c7f379f6b9b8c212bdeef/68747470733a2f2f6173736574732e76657263656c2e636f6d2f696d6167652f75706c6f61642f76313636323133303535392f6e6578746a732f49636f6e5f6461726b5f6261636b67726f756e642e706e67"
         },
         {
             "name": "Vite",
@@ -40,55 +36,21 @@
         },
         {
             "name": "Tailwind CSS",
-            "icon": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/06/Tailwind_CSS_logo_with_dark_text.svg/330px-Tailwind_CSS_logo_with_dark_text.svg.png"
-        },
-        {
-            "name": "Bootstrap",
-            "icon": "https://img.icons8.com/color/48/000000/bootstrap.png"
-        },
-        {
-            "name": "Axios",
-            "icon": "https://axios-http.com/assets/logo.svg"
+            "icon": "https://avatars.githubusercontent.com/u/67109815"
         }
     ],
     "backend": [
         {
             "name": "Node.js",
-            "icon": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Node.js_logo.svg/1280px-Node.js_logo.svg.png"
+            "icon": "https://avatars.githubusercontent.com/u/9950313"
         },
         {
             "name": "Express.js",
-            "icon": "https://cdn.worldvectorlogo.com/logos/expressjs.svg"
+            "icon": "https://github.com/expressjs.png"
         },
         {
             "name": "FastAPI",
             "icon": "https://avatars.githubusercontent.com/u/156354296?s=280&v=4"
-        },
-        {
-            "name": "Restful API",
-            "icon": "https://img.icons8.com/?size=100&id=55497&format=png&color=000000"
-        },
-        {
-            "name": "JWT",
-            "icon": "https://www.jwt.io/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fjwt-flower.f20616b0.png&w=1920&q=75"
-        },
-        {
-            "name": "Google OAuth 2.0",
-            "icon": "https://i0.wp.com/www.omnidefend.com/wp-content/uploads/2022/03/0Auth_Trans.png?fit=1014%2C676&ssl=1"
-        },
-        {
-            "name": "SMTP",
-            "icon": "https://mona.solutions/wp-content/uploads/2017/01/Gmail_la_gi-1000x727.png"
-        }
-    ],
-    "Mobile Development (Basic Exposure)": [
-        {
-            "name": "React Native",
-            "icon": "https://img.icons8.com/color/48/000000/react-native.png"
-        },
-        {
-            "name": "Expo",
-            "icon": "https://avatars.githubusercontent.com/u/12504344?s=200&v=4"
         }
     ],
     "databases": [
@@ -97,46 +59,13 @@
             "icon": "https://img.icons8.com/color/48/000000/postgreesql.png"
         },
         {
-            "name": "MongoDB",
-            "icon": "https://img.icons8.com/color/48/000000/mongodb.png"
-        },
-        {
-            "name": "SQL Server",
-            "icon": "https://img.icons8.com/?size=100&id=laYYF3dV0Iew&format=png&color=000000"
-        },
-        {
             "name": "Prisma ORM",
             "icon": "https://d2eip9sf3oo6c2.cloudfront.net/tags/images/000/001/287/square_480/prismaHD.png"
         }
     ],
-    "caching": [
-        
-        {
-            "name": "Redis",
-            "icon": "https://img.icons8.com/color/48/000000/redis.png"
-        }
-    ],
-    "cloud": [
-        {
-            "name": "Docker",
-            "icon": "https://img.icons8.com/color/48/000000/docker.png"
-        },
-        {
-            "name": "Vercel",
-            "icon": "https://pipedream.com/s.v0/app_XaLh2x/logo/orig"
-        },
-        {
-            "name": "Render",
-            "icon": "https://media.licdn.com/dms/image/v2/D4E0BAQGGDoFoqHtOvA/company-logo_200_200/company-logo_200_200/0/1702595267620/renderco_logo?e=2147483647&v=beta&t=ZYrxKUyruOEupgw5Lr5amgwgBCJq8VXH8r05Qr5CeQc"
-        },
-        {
-            "name": "Cloudflare",
-            "icon": "https://img.icons8.com/?size=100&id=fUGx53gD9Jof&format=png&color=000000"
-        }
-    ],
     "tools": [
         {
-            "name": "Git & GitHub",
+            "name": "Git/GitHub",
             "icon": "https://img.icons8.com/color/48/000000/git.png"
         },
         {
@@ -144,16 +73,16 @@
             "icon": "https://img.icons8.com/?size=100&id=EPbEfEa7o8CB&format=png&color=000000"
         },
         {
-            "name": "Thunder Client",
-            "icon": "https://avatars.githubusercontent.com/u/164544218?s=200&v=4"
-            },
+            "name": "Docker",
+            "icon": "https://img.icons8.com/color/48/000000/docker.png"
+        },
+        {
+            "name": "Redis",
+            "icon": "https://img.icons8.com/color/48/000000/redis.png"
+        },
         {
             "name": "VS Code",
             "icon": "https://img.icons8.com/color/48/000000/visual-studio-code-2019.png"
-        },
-        {
-            "name": "Visual Studio",
-            "icon": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/Visual_Studio_Icon_2026.svg/1200px-Visual_Studio_Icon_2026.svg.png"
         }
     ]
 }

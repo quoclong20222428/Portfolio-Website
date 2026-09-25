@@ -83,8 +83,9 @@ var typed = new Typed(".typing-text", {
   strings: [
     "frontend development",
     "backend development",
-    "android development",
+    "software development",
     "web development",
+    "full-stack development",
   ],
   loop: true,
   typeSpeed: 50,
